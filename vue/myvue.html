@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./myVue.js"></script>
+</head>
+
+<body>
+  <h3 style="color: red">fe</h3>
+  <!-- 模拟Vue.js -->
+  <div id="app">
+    22{{cyy_msg}}11
+    <p>test</p>
+    <div>
+      <p>
+        <span>my name is {{name}}</span>
+      </p>
+      <!-- <input type="text" v-model="textValue">
+      <p>{{textValue}}</p> -->
+    </div>
+    <!-- <p v-html="htmlText">fwe</p> -->
+  </div>
+  <script>
+    // 1,数据初次渲染（深层次渲染、递归查找）
+    // 2,数据响应（如何知道数据改变了，渲染改变的数据）
+    // 1）数据观察 2）观察者模式--发布订阅模式（分离 解构）
+
+    let vm = new Vue({
+      el: "#app",
+      data: {
+        cyy_msg: "自定义测试数据lalla",
+        name: "chengyuanyuan",
+        textValue:"测试",
+        htmlText:"<h1>测试数据</h1>"
+      }
+    })
+    setTimeout(()=>{
+      console.log(33)
+      vm.$data.name="cyy"
+      // <h1 style="color:'red'">测试数据</h1>
+      // vm.$data.htmlText = ` <h3 style="color: red">测试数据</h3>`;
+    },2000)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 正则表达式作用 ：1，查找  2，替换  3，验证   4，分割-->
+  <script>
+    // g 全局匹配： 不加g：局部匹配，只返回第一个
+    // let str = "aseifwj3235fiw3fjiw2jif889";
+    // 通过js实现数字提取到数组中
+    // function getNumber(str){
+    //   let arr = [];
+    //   let temp = '';
+    //   for(let i = 0;i<str.length;i++){
+    //     if(!isNaN(str[i])){
+    //       temp+=str[i];
+    //     }else{
+    //       if(temp){
+    //         arr.push(temp);
+    //         temp = "";
+    //       }
+    //     }
+    //   }
+    //   if(temp){
+    //     arr.push(temp);
+    //   }
+    //   return arr;
+    // }
+    // let arr = getNumber(str);
+    // console.log(arr);
+    // 一、正则表达式的创建
+    // 1,字面量创建
+    // let reg =/\d+/g;
+    // let regArr = str.match(reg);
+    // console.log(regArr);
+    // 2，构造函数创建
+    // let test = 'if';
+    // let reg = new RegExp(test,'g');
+    // console.log(str.match(reg));
+
+    // 二、正则表达式的匹配方法
+    // 1,test exec 方法
+    // let reg = /if/g;
+    // console.log(reg.test(str));
+    // let numReg = /\d+/g
+    // console.log(numReg.exec(str));
+    // console.log(numReg.exec(str));
+    // console.log(numReg.exec(str));
+
+    // 2，字符串相关方法 split search  match  replace
+      // let  reg  = /\d+/g
+      // console.log(str.split(reg));
+      // console.log(str.search(reg))
+      // console.log(str.match(reg));
+      // console.log(str.replace(reg,'*'));
+
+    // 三、元字符
+    // 1，字符相关
+    // \w：数字、字母、下划线
+    // let str = `
+    // `;
+    // let reg = /./
+    // console.log(str.match(reg));
+    // console.log(reg.test(str)) 
+    // \W：非数字、字母、下划线
+    // \d 数字【0-9】
+    // \\D 非数组
+    // \s 匹配空格
+    // \S 非空格
+      // 
+
+    // 2,数量相关
+    // {} ? * +
+    // let str = "abccccccccef";
+    // let reg = /bc{3}e/g //通过{}设置c出现的次数
+    // let reg = /bc{1,3}e/g //通过{1,3}设置c出现的次数1-3这个区间数，包括1和3；
+    // let reg = /bc{1,}e/g //{1,} 逗号后面不加代表一次或者多次
+    
+
+    // ? 0次或者1次 等同于{0,1}
+    // let str = "abcccefg12ef3";
+    // let reg = /d?/g;
+    // +  1次或者多次 等同于{1,}
+    // * 0次或者多次 等同于{0,}
+
+
+    // ?可以设置惰性匹配
+    // let reg = /\w{2,3}?/g;
+    // console.log(str.match(reg));
+
+
+    // 3，位置相关
+    // ^  $  \b  \B
+    // let str = "this is a book";
+    // let reg = /\bis\b/g
+    // console.log(str.match(reg));
+
+    // // 返回无边界的两个连续的字符
+    // let str = "this is a bookfjwie";
+    // let reg = /\B\w{2}\B/g
+    // console.log(str.match(reg));//["hi", "oo"] 
+
+    // 4，括号相关
+    // 分组
+    // let str = "abababfjiwoefi";
+    // let reg = /(ab){3}/g;//匹配ab三次
+    // console.log(reg.test(str)); //true
+    // 提取值
+    // let str = "2020-10-11"
+    // let reg = /(\d{4})-(\d{2})-(\d{2})/;
+    // str.match(reg)
+    // console.log(RegExp.$1,RegExp.$2,RegExp.$3)
+    // console.log(str.replace(reg,"$2/$3/$1"))
+    // 替换
+    // let str = "2020-10-11"
+    // let reg = /(\d{4})-(\d{2})-(\d{2})/;
+    // console.log(str.replace(reg,"$2/$3/$1"))
+    // 反向引用
+    // let str  = "new-content_name";
+    // // (-|_)可以是中横线或者下划线
+    // let reg = /\w{2}(-|_)\w{7}(-|_)\w{4}/;
+    // console.log(reg.test(str));//true
+    // // 如果想要前后的线型统一，(\n)代表使用前面的第几个分组
+    // let reg1 = /\w{2}(-|_)\w{7}(\1)\w{4}/;
+    // console.log(reg1.test(str));//false  前后横线必须一致
+      // [] 字符集合
+
+
+      // 匹配模式：
+      
+  </script>
+</body>
+</html>

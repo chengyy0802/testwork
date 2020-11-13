@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./vue.js"></script>
+</head>
+<body>
+  <!-- 模仿vue
+    1，数据首次渲染
+    2，数据响应
+  -->
+  <div class="app">
+    my name is {{username}}
+    <p>Tom's Chinese name is  {{chineseName}}</p>
+    <div>
+      <span>中文名字是:{{chineseName}}</span>
+      <br>
+      <input type="text" v-model="inputValue"> {{inputValue}}
+      <p v-html="htmlText"></p>
+    </div>
+  </div>
+  <script>
+    let vm = new Vue({
+      el:".app",
+      data:{
+        username:'chengyuanyuan',
+        chineseName:"张三",
+        inputValue:"测试",
+        htmlText:"<h2>测试数据</h2>"
+      }
+    })
+    setTimeout(() => {
+      vm.$data.chineseName = "王六六"
+      vm.$data.username= 'cyy'
+      vm.$data.htmlText = "<h4 style='color:red'>测试数据</h4>"
+    }, 2000);
+  </script>
+</body>
+</html>

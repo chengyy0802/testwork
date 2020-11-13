@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./vue.js"></script>
+</head>
+<body>
+  <div id="app">
+      1111  {{message}}  2222
+    <p v-html="htmlValue">111  2222</p>
+    <div>
+      <p>测试的数据</p>
+    </div>
+    <div>
+      <input type="text" v-model="inputValue">
+      <p>{{inputValue}}</p>
+    </div>
+  </div>
+  <script>
+    // 1,数据初始渲染（获取到所有大胡子语法，然后渲染）
+    // 2，数据响应（数据何时发生了变化，如何渲染）
+    let vm = new Vue({
+      el:"#app",
+      data:{
+        message:"test data",
+        inputValue:"input test",
+        htmlValue:"<h1>测试数据</h1>",
+      }
+    })
+    setTimeout(()=>{
+      vm.$data.message = 'cyy test data'
+      vm.$data.htmlValue="<h3 style='color:red'>测试数据</h3>";
+    },2000)
+  </script>
+</body>
+</html>
